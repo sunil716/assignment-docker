@@ -22,4 +22,3 @@ jobs :
           tags: |
             ${{ secrets.DockerHub_Username }}/sample-html:latest
             ${{ secrets.DockerHub_Password }}/sample-html:${{ github.run_number }}
-
