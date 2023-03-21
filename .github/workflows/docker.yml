@@ -20,5 +20,5 @@ jobs :
         with:
           push: true
           tags: |
-            ${{ secrets.DockerHub_Username }}/sample-html:latest
-            ${{ secrets.DockerHub_Password }}/sample-html:${{ github.run_number }}
+            sunilgv/sample-html:latest
+            sunilgv/sample-html:${{ github.run_number }}
