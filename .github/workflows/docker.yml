@@ -1,0 +1,25 @@
+name : 
+
+on : wokflow_dispatch
+
+jobs :
+  docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Getting the code
+        uses: actions/checkout@v3
+      - name: setup-docker
+        uses: docker-practice/actions-setup-docker@1.0.11
+      - name: Login to Dockerhub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DockerHub_Username }}
+          password: ${{ secrets.DockerHub_Password }}
+      - name: Build and Push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: |
+            ${{ secrets.DockerHub_Username }}/sample-html:latest
+            ${{ secrets.DockerHub_Password }}/sample-html:${{ github.run_number }}
+
