@@ -1,6 +1,6 @@
 name : Docker Images building and pushing to Docker Hub
 
-on : wokflow_dispatch
+on : workflow_dispatch
 
 jobs :
   docker-image:
