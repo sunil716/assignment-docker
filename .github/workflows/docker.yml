@@ -1,4 +1,4 @@
-name : Docker Images building and pushing to Docker Hub
+name : Docker Images building and pushing to Docker Hub.
 
 on : workflow_dispatch
 
