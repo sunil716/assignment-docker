@@ -1,10 +1,16 @@
+# Name of the workflow
 name : Docker Images building and pushing to Docker Hub.
 
-on : workflow_dispatch
+# Can be triggered manually or by a push event
+on : [workflow_dispatch, push]
 
+# Jobs in the workflow
 jobs :
+  # Job to build docker images and pushithem to Docker Hub
   docker-image:
+    # Runs on the latest version of ubuntu
     runs-on: ubuntu-latest
+    # Steps involved in the job
     steps:
       - name: Getting the code
         uses: actions/checkout@v3
